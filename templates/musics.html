@@ -2,7 +2,7 @@
 {% block body %}
 <div data-role="page" data-title="Register" id="events">
     <!--script type="text/javascript">
-    $( '#canais' ).live( 'pagebeforeshow',function(event,data){
+    $( '#musics' ).live( 'pagebeforeshow',function(event,data){
         eventPage(event,data);
     });
     </script-->
@@ -10,15 +10,10 @@
         <h1>Pi Remote Control</h1>
     </div>
     <div data-role="content">
-        <div>
-        <button type="button" onclick="clickedVol('DOWN');">VOLUME-</button>
-        <button type="button" onclick="clickedVol('UP');">VOLUME+</button>
-        </div>
-        <br />
         <ul id="d-list" data-role="listview" data-inset="true" data-filter="true" data-dividertheme="a">
-            <li data-role="list-divider">Canais</li>
-            {% for c in canais %}
-                <li id="canal{{ c['numero'] }}" onclick="clickedop('{{c['numero']}}');">{{ c['canal'] }}</a></li>
+            <li data-role="list-divider">Musicas</li>
+            {% for m in musics %}
+                <li id="music{{ m.id }}" onclick="selectedMusic('{{ m.id }}');">{{ m.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
